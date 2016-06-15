@@ -67,6 +67,7 @@ func main() {
 			if err != nil {
 				log.Fatal(err)
 			}
+			cmd.Wait()
 		} else if msg.NodeID == 1 && msg.Data == "0" {
 			mutexOff.Lock()
 			offsig++
@@ -90,6 +91,7 @@ func main() {
 					if err != nil {
 						log.Fatal(err)
 					}
+					cmd.Wait()
 				}
 			}()
 		}
